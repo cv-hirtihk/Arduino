@@ -54,34 +54,35 @@ String myStatus = "";
 
 void setup() {
   //Initialize serial and wait for port to open
-  Serial.begin(115200);  // Initialize serial
+  //Serial.begin(115200);  // Initialize serial
    bmp.begin();  
   
   // initialize serial for ESP module  
-  setEspBaudRate(ESP_BAUDRATE);
+  //setEspBaudRate(ESP_BAUDRATE);
   
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo native USB port only
   }
 
-  Serial.print("Searching for ESP8266..."); 
+  //Serial.print("Searching for ESP8266..."); 
   // initialize ESP module
-  WiFi.init(&Serial1);
+  //WiFi.init(&Serial1);
 
   // check for the presence of the shield
-  if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("WiFi shield not present");
+  //if (WiFi.status() == WL_NO_SHIELD) {
+ //   Serial.println("WiFi shield not present");
     // don't continue
-    while (true);
-  }
+  //  while (true);
+ // }
   Serial.println("found it!");
    
-  ThingSpeak.begin(client);  // Initialize ThingSpeak
+ // ThingSpeak.begin(client);  // Initialize ThingSpeak
 }
 
 void loop() {
 
   // Connect or reconnect to WiFi
+  /*
   if(WiFi.status() != WL_CONNECTED){
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(SECRET_SSID);
@@ -92,6 +93,7 @@ void loop() {
     } 
     Serial.println("\nConnected.");
   }
+  */
 
 
 
@@ -119,34 +121,21 @@ Serial.println(number4);
 
 
   // set the fields with the values
+  /*
   ThingSpeak.setField(1, number1);
   ThingSpeak.setField(2, number2);
   ThingSpeak.setField(3, number3);
   ThingSpeak.setField(4, number4);
-/*
-  // figure out the status message
-  if(number1 > number2){
-    myStatus = String("field1 is greater than field2"); 
-  }
-  else if(number1 < number2){
-    myStatus = String("field1 is less than field2");
-  }
-  else{
-    myStatus = String("field1 equals field2");
-  }
-  
-  // set the status
-  ThingSpeak.setStatus(myStatus);
-  */
+*/
   
   // write to the ThingSpeak channel
-  int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
-  if(x == 200){
-    Serial.println("Channel update successful.");
-  }
-  else{
-    Serial.println("Problem updating channel. HTTP error code " + String(x));
-  }
+  //int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+  //if(x == 200){
+  //  Serial.println("Channel update successful.");
+ // }
+  //else{
+  //  Serial.println("Problem updating channel. HTTP error code " + String(x));
+  //}
   
   // change the values
 
@@ -165,7 +154,7 @@ Serial.println(number4);
 
 
   
-  delay(20000); // Wait 20 seconds to update the channel again
+  delay(2000); // Wait 20 seconds to update the channel again
 }
 
 // This function attempts to set the ESP8266 baudrate. Boards with additional hardware serial ports
