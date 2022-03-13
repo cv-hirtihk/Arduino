@@ -17,8 +17,8 @@
 #include "WiFiEsp.h"
 //#include "secrets.h"
 
-#define SECRET_SSID "Hirtih"    // replace MySSID with your WiFi network name
-#define SECRET_PASS "9841207696" // replace MyPassword with your WiFi password
+#define SECRET_SSID "SSID"    // replace MySSID with your WiFi network name
+#define SECRET_PASS "PASSWORD" // replace MyPassword with your WiFi password
 
 #define SECRET_CH_ID 1674060     // replace 0000000 with your channel number
 #define SECRET_WRITE_APIKEY "Y8FG8YKV9FXG4K8A"   // replace XYZ with your channel write API Key
