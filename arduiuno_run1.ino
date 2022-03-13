@@ -159,6 +159,7 @@ Serial.println(number4);
 
 // This function attempts to set the ESP8266 baudrate. Boards with additional hardware serial ports
 // can use 115200, otherwise software serial is limited to 19200.
+/*
 void setEspBaudRate(unsigned long baudrate){
   long rates[6] = {115200,74880,57600,38400,19200,9600};
 
@@ -177,3 +178,4 @@ void setEspBaudRate(unsigned long baudrate){
     
   Serial1.begin(baudrate);
 }
+*/
