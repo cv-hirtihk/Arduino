@@ -1,3 +1,4 @@
+// Here DHT11 is used to obtain data for the ML model
 #include <Adafruit_BMP085.h>
 #include "DHT.h"
 
